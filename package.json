@@ -1,0 +1,22 @@
+{
+  "name": "qa-automation-challenge",
+  "version": "1.0.0",
+  "description": "A simple B2B SaaS platform for QA automation testing with intentional flaws.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "qa",
+    "automation",
+    "challenge",
+    "buggy"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}

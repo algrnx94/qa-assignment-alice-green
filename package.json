@@ -4,8 +4,7 @@
   "description": "A simple B2B SaaS platform for QA automation testing with intentional flaws.",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js"
   },
   "keywords": [
     "qa",
@@ -18,5 +17,9 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.1",
+    "@types/node": "^25.2.0"
   }
 }

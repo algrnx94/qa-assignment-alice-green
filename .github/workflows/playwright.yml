@@ -17,12 +17,20 @@ jobs:
       run: npm ci
     - name: Start server & run tests
       run: |
-        npm start &  # Starts server in background (port usually 3000)
-        npx wait-on http://localhost:3000  # Waits for server ready
+        # Start server in the background and detach output so it keeps running
+        nohup npm start > server.log 2>&1 &
+
+        # Wait up to 60s for the server to start
+        npx wait-on http://localhost:3000 -t 60000
+
+        # Sanity-check the server responds (retries if needed)
+        curl --retry 5 --retry-delay 3 --fail http://localhost:3000/
+
+        # Run Playwright tests
         npx playwright test
     - uses: actions/upload-artifact@v5
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
         path: playwright-report/
-        retention-days: 30
+        retention-days: 3

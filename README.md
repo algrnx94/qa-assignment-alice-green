@@ -14,7 +14,8 @@
 
 ## How tests run in CI/CD
 
-- Trigger: run on every PR and on pushes to `main`/`release` branches.
+- Trigger: run on every PR and on pushes to `main` branches.
+- .yml file already includes both dependencies and PW, verifying local is loaded
 - Typical job steps (GitHub Actions / other CI):
   1. Checkout code
   2. `npm ci`
